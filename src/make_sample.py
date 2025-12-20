@@ -1,15 +1,26 @@
 import pandas as pd
+import os
 
-# Путь к локальному raw файлу
-RAW_FILE = "data/raw/default_of_credit_card_clients.xls"
+# Paths to raw dataset and sample CSV
+RAW_FILE = os.path.join("..", "data", "raw", "default_of_credit_card_clients.xls")
+SAMPLE_FILE = os.path.join("..", "data", "samples", "default_sample.csv")
 
-# Загружаем полный датасет
+# Load the full dataset
 df = pd.read_excel(RAW_FILE)
 
-# Берём случайные 500 строк для sample (не трогаем исходный файл)
-sample_df = df.sample(500, random_state=42)
+# Keep the first 2 rows separately (column names + descriptions)
+header_rows = df.iloc[:2]
 
-# Сохраняем sample в папку data/samples
-sample_df.to_csv("data/samples/default_sample.csv", index=False)
+# Randomly select 498 rows from the remaining dataset
+sample_rows = df.iloc[2:].sample(498, random_state=42)
 
-print("Sample created: data/samples/default_sample.csv")
+# Combine the first 2 rows with the random sample
+sample_df = pd.concat([header_rows, sample_rows])
+
+# Create the folder if it doesn't exist
+os.makedirs(os.path.dirname(SAMPLE_FILE), exist_ok=True)
+
+# Save the sample CSV
+sample_df.to_csv(SAMPLE_FILE, index=False)
+
+print(f"Sample created: {SAMPLE_FILE}")
