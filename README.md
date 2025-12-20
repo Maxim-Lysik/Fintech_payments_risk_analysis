@@ -22,13 +22,13 @@ The goal is to improve credit risk assessment by identifying customers with a hi
 
 🔄 Pipeline
 
-Data ingestion and preprocessing
+* Data ingestion and preprocessing
 
-Feature engineering
+* Feature engineering
 
-Exploratory data analysis (EDA)
+* Exploratory data analysis (EDA)
 
-Predictive modeling and evaluation
+* Predictive modeling and evaluation
 
 🛠️ Tech Stack
 
