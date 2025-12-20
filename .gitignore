@@ -1,0 +1,33 @@
+# ===============================
+# Data
+# ===============================
+
+# Raw data (never commit)
+data/raw/
+
+# Processed data (commit only if small and safe)
+# data/processed/
+
+# Sample data (safe to commit)
+# data/samples/
+
+
+# ===============================
+# Jupyter
+# ===============================
+.ipynb_checkpoints/
+
+
+# ===============================
+# Python
+# ===============================
+__pycache__/
+*.pyc
+*.pyo
+
+
+# ===============================
+# Environments
+# ===============================
+.venv/
+.env
