@@ -32,5 +32,5 @@ The goal is to improve credit risk assessment by identifying customers with a hi
 
 🛠️ Tech Stack
 
-Python, pandas, numpy, scikit-learn, matplotlib, seaborn, Jupyter Notebook
+Python, pandas, numpy, scikit-learn, matplotlib, seaborn, Jupyter Notebook 
  
